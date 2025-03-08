@@ -1,0 +1,34 @@
+name: Build Docusaurus
+
+on:
+  push:
+    branches:
+      - main  # main ブランチにプッシュされたときに実行
+  pull_request:
+    branches:
+      - main  # PRが作成されたときにも実行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Ubuntu 環境で実行
+
+    steps:
+      - name: リポジトリのチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.js のセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  # Docusaurus は Node.js 16以上を推奨
+
+      - name: 依存関係のインストール
+        run: npm install
+
+      - name: Docusaurus のビルド
+        run: npm run build
+
+      - name: ビルド成果物の保存（オプション）
+        uses: actions/upload-artifact@v4
+        with:
+          name: docusaurus-build
+          path: build  # `build` ディレクトリを保存
