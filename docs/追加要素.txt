@@ -4,7 +4,7 @@ sidebar_position: 5
 
 > 下にスクロールしてください。次のページに移動できるボタンがあります。
 
-![特別な機能](http://made-by-free.com/images/label_function.png)
+![特別な機能](http://guide.made-by-free.com/images/label_function.png)
 
 :::important
 当サーバーは『シンプルなサバイバル』をテーマにしているので、追加要素は少なめです！
@@ -24,7 +24,7 @@ sidebar_position: 5
 /s
 ```
 と送信すると、経済調整チームによって管理されているショップを開くことができます。サーバー全体で売却量が多いと売却価格が下がり、購入量が多いと購入価格が上がる需要と供給に応じた価格変動があります！
-![shop.png](http://made-by-free.com/images/shop.png)
+![shop.png](http://guide.made-by-free.com/images/shop.png)
 
 ## 💳活動スコア
 MBFサーバーのDiscordで、VCに参加したりメッセージを送ると、「活動スコア」が加算されます。毎週、『〔🥇〕ランキング』に上位ユーザーが掲載されます！貯まった活動スコアはマイクラ内の通貨と交換することもできます♪ [詳しくは、ここをクリック](http://made-by-free.com/vc-score)
