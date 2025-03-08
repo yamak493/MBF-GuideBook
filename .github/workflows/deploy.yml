@@ -1,12 +1,11 @@
-name: Deploy Docusaurus with GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
-  # Triggered on pushes to the main branch
-  push:
-    branches: ["main"]
-  
-  # Allows you to run the workflow manually from the GitHub Actions tab
   workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths-ignore:
+    - '.github/workflows/**'
 
 permissions:
   contents: read
