@@ -1,41 +1,21 @@
-# Website
+# MBFルールブック
+公式Webページにはすべての情報が揃っていますが、情報量が多いためにかえって全体像がわからなくなる問題が発生すると考えられたため、情報を絞り体系的に理解のできるガイドページを作成しました。
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+### 🔗URL
+https://wiki.made-by-free.com/docs/はじめに
 
-### Installation
-
+### 📦ビルド
 ```
-$ yarn
+$ npm run build
 ```
+Docusaurusで作成していますので、上のコマンドを実行すればbuildディレクトリにファイルが生成されます。
 
-### Local Development
-
+### 🔧開発
 ```
-$ yarn start
+$ npm run start
 ```
+上のコマンドを実行することで、http://localhost:3000 でリアルタイム更新のテストページを開けます。
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+### 📚ライブラリ＆前提条件
+- Docusaurus
+- Node.js
