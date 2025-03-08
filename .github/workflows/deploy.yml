@@ -1,39 +1,65 @@
-name: Deploy Docusaurus
+name: Deploy Docusaurus with GitHub Pages
 
 on:
-  workflow_dispatch:
+  # Triggered on pushes to the main branch
   push:
-    branches: [ main ]
-    paths-ignore:
-    - '.github/workflows/**'
+    branches: ["main"]
+  
+  # Allows you to run the workflow manually from the GitHub Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  # Build job
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: リポジトリのチェックアウト
+      # Checkout the repository
+      - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Node.js のセットアップ
-        uses: actions/setup-node@v4
+      
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18  # 使用するNode.jsのバージョン
-
-      - name: 依存関係のインストール
+          node-version: '18' # Specify the Node.js version you're using
+      
+      # Install dependencies
+      - name: Install dependencies
         run: npm install
-
-      - name: Docusaurus のビルド
+      
+      # Build the Docusaurus project
+      - name: Build Docusaurus site
         run: npm run build
 
-      - name: GitHub Pages にデプロイ
-        env:
-          GIT_USER: github-actions[bot]
-          USE_SSH: false
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # SecretsにPATを設定
+      # Upload the build artifacts to GitHub Pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
+
+  # Deployment job
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Git for deployment
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Deploy the build to GitHub Pages
-          npm run deploy
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
