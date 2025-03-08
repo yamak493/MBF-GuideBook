@@ -18,7 +18,7 @@ jobs:
       - name: Node.js のセットアップ
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 18  # 使用するNode.jsのバージョン
 
       - name: 依存関係のインストール
         run: npm install
@@ -28,6 +28,12 @@ jobs:
 
       - name: GitHub Pages にデプロイ
         env:
-          GIT_USER: ${{ secrets.GITHUB_TOKEN }}
+          GIT_USER: github-actions[bot]
+          USE_SSH: false
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # SecretsにPATを設定
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Deploy the build to GitHub Pages
           npm run deploy
