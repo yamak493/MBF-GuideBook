@@ -1,12 +1,11 @@
 name: Build Docusaurus
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main  # main ブランチにプッシュされたときに実行
-  pull_request:
-    branches:
-      - main  # PRが作成されたときにも実行
+    branches: [ main ]
+    paths-ignore:
+    - '.github/workflows/**'
 
 jobs:
   build:
