@@ -20,7 +20,7 @@ sidebar_position: 10
 当サーバーでは、寄付をしてくれた支援者様に向けて、お礼の特典をご用意しております。
 寄付して頂いた額の範囲内で、お好きな特典を選択いただけます。
 
-![donate.png](http://made-by-free.com/images/donate.png)
+![donate.png](/img/mbf/donate.png)
 
 
 システムの都合上、どうしても全メンバーさんに付与することはできない権限らを、（利用者を限定できるという基準としても）支援をしてくださった方へのささやかなお礼として特典パックにしました。他ゲームで例えると、『限定先行体験』のような感覚です。お楽しみいただければと思います^^
@@ -28,7 +28,7 @@ sidebar_position: 10
 
 > [特典ストア](http://store.made-by-free.com)
 > 
-> ![donate_store.png](http://made-by-free.com/images/donate_store.png)
+> ![donate_store.png](/img/mbf/donate_store.png)
 
 
 
