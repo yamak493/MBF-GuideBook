@@ -1,0 +1,33 @@
+name: Deploy Docusaurus
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths-ignore:
+    - '.github/workflows/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリのチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.js のセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: 依存関係のインストール
+        run: npm install
+
+      - name: Docusaurus のビルド
+        run: npm run build
+
+      - name: GitHub Pages にデプロイ
+        env:
+          GIT_USER: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run deploy
