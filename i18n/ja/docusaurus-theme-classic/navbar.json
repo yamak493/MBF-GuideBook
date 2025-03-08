@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "MBFサーバーガイド",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "MBFサーバーガイド",
+    "description": "The alt text of navbar logo"
+  }
+}
