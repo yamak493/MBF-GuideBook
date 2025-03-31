@@ -47,6 +47,16 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@cmfcmf/docusaurus-search-local',
+      {
+        language: ['ja'],
+      },
+    ],
+  ],
+  
+
   themeConfig: {
     // Replace with your project's social card
     image: 'http://made-by-free.com/wp-content/uploads/2024/08/default.jpg',
