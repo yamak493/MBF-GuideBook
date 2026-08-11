@@ -32,39 +32,3 @@
 img {
   border-radius: 15px; /* 任意の値に調整 */ 
 }
-
-
-/* ページナビゲーションのボタン全体 */
-.pagination-nav__link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  margin: 20px 0;
-  border: 2px solid #7ED321; /* 緑色の枠線 */
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ffffff;
-  background-color: #7ED321; /* 背景色 */
-  transition: all 0.3s ease;
-}
-
-/* ボタンホバー時 */
-.pagination-nav__link:hover {
-  background-color: #7ED321; /* ホバー時の背景色 */
-  border-color: #7ED321; /* ホバー時の枠線色 */
-  color: #ffffff; /* ホバー時の文字色 */
-  transform: scale(1.05); /* 少し拡大 */
-}
-
-/* 「前のページ」ボタンの特別なスタイル */
-.pagination-nav__link--prev {
-  margin-right: auto;
-}
-
-/* 「次のページ」ボタンの特別なスタイル */
-.pagination-nav__link--next {
-  margin-left: auto;
-}
